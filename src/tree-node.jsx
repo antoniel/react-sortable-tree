@@ -1,8 +1,9 @@
+/* eslint-disable */
 import React, { Component, Children, cloneElement } from 'react';
-import PropTypes from 'prop-types';
 import classnames from './utils/classnames';
 import './tree-node.css';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class TreeNode extends Component {
   render() {
     const {
@@ -13,10 +14,7 @@ class TreeNode extends Component {
       swapDepth,
       scaffoldBlockPxWidth,
       lowerSiblingCounts,
-      connectDropTarget,
       isOver,
-      draggedNode,
-      canDrop,
       treeIndex,
       treeId, // Delete from otherProps
       getPrevRow, // Delete from otherProps
@@ -142,7 +140,7 @@ class TreeNode extends Component {
       style = { left: scaffoldBlockPxWidth * scaffoldBlockCount };
     }
 
-    return connectDropTarget(
+    return (
       <div
         {...otherProps}
         className={classnames('rst__node', rowDirectionClass)}
@@ -153,8 +151,6 @@ class TreeNode extends Component {
           {Children.map(children, child =>
             cloneElement(child, {
               isOver,
-              canDrop,
-              draggedNode,
             })
           )}
         </div>
@@ -170,35 +166,6 @@ TreeNode.defaultProps = {
   canDrop: false,
   draggedNode: null,
   rowDirection: 'ltr',
-};
-
-TreeNode.propTypes = {
-  treeIndex: PropTypes.number.isRequired,
-  treeId: PropTypes.string.isRequired,
-  swapFrom: PropTypes.number,
-  swapDepth: PropTypes.number,
-  swapLength: PropTypes.number,
-  scaffoldBlockPxWidth: PropTypes.number.isRequired,
-  lowerSiblingCounts: PropTypes.arrayOf(PropTypes.number).isRequired,
-
-  listIndex: PropTypes.number.isRequired,
-  children: PropTypes.node.isRequired,
-
-  // Drop target
-  connectDropTarget: PropTypes.func.isRequired,
-  isOver: PropTypes.bool.isRequired,
-  canDrop: PropTypes.bool,
-  draggedNode: PropTypes.shape({}),
-
-  // used in dndManager
-  getPrevRow: PropTypes.func.isRequired,
-  node: PropTypes.shape({}).isRequired,
-  path: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-
-  // rtl support
-  rowDirection: PropTypes.string,
 };
 
 export default TreeNode;
