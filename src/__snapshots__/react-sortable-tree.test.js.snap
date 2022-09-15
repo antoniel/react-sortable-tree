@@ -47,7 +47,9 @@ exports[`<SortableTree /> should render tree correctly 1`] = `
         }
       >
         <div
+          canDrop={false}
           className="rst__node"
+          draggedNode={null}
           style={
             Object {
               "height": 62,
@@ -93,10 +95,7 @@ exports[`<SortableTree /> should render tree correctly 1`] = `
                   }
                 >
                   <div
-                    className="rst__moveHandle"
-                  />
-                  <div
-                    className="rst__rowContents"
+                    className="rst__rowContents rst__rowContentsDragDisabled"
                   >
                     <div
                       className="rst__rowLabel"

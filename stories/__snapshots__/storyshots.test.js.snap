@@ -55,7 +55,9 @@ exports[`Storyshots Advanced Drag from external source 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -101,10 +103,7 @@ exports[`Storyshots Advanced Drag from external source 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -125,7 +124,9 @@ exports[`Storyshots Advanced Drag from external source 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -171,10 +172,7 @@ exports[`Storyshots Advanced Drag from external source 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -279,7 +277,9 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
               }
             >
               <div
+                canDrop={false}
                 className="rst__node"
+                draggedNode={null}
                 style={
                   Object {
                     "height": 62,
@@ -325,10 +325,7 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                         }
                       >
                         <div
-                          className="rst__moveHandle"
-                        />
-                        <div
-                          className="rst__rowContents"
+                          className="rst__rowContents rst__rowContentsDragDisabled"
                         >
                           <div
                             className="rst__rowLabel"
@@ -349,7 +346,9 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                 </div>
               </div>
               <div
+                canDrop={false}
                 className="rst__node"
+                draggedNode={null}
                 style={
                   Object {
                     "height": 62,
@@ -395,10 +394,7 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                         }
                       >
                         <div
-                          className="rst__moveHandle"
-                        />
-                        <div
-                          className="rst__rowContents"
+                          className="rst__rowContents rst__rowContentsDragDisabled"
                         >
                           <div
                             className="rst__rowLabel"
@@ -419,7 +415,9 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                 </div>
               </div>
               <div
+                canDrop={false}
                 className="rst__node"
+                draggedNode={null}
                 style={
                   Object {
                     "height": 62,
@@ -465,10 +463,7 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                         }
                       >
                         <div
-                          className="rst__moveHandle"
-                        />
-                        <div
-                          className="rst__rowContents"
+                          className="rst__rowContents rst__rowContentsDragDisabled"
                         >
                           <div
                             className="rst__rowLabel"
@@ -489,7 +484,9 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                 </div>
               </div>
               <div
+                canDrop={false}
                 className="rst__node"
+                draggedNode={null}
                 style={
                   Object {
                     "height": 62,
@@ -556,10 +553,7 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                         }
                       >
                         <div
-                          className="rst__moveHandle"
-                        />
-                        <div
-                          className="rst__rowContents"
+                          className="rst__rowContents rst__rowContentsDragDisabled"
                         >
                           <div
                             className="rst__rowLabel"
@@ -580,7 +574,9 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                 </div>
               </div>
               <div
+                canDrop={false}
                 className="rst__node"
+                draggedNode={null}
                 style={
                   Object {
                     "height": 62,
@@ -634,10 +630,7 @@ exports[`Storyshots Advanced Drag out to remove 1`] = `
                         }
                       >
                         <div
-                          className="rst__moveHandle"
-                        />
-                        <div
-                          className="rst__rowContents"
+                          className="rst__rowContents rst__rowContentsDragDisabled"
                         >
                           <div
                             className="rst__rowLabel"
@@ -720,7 +713,9 @@ exports[`Storyshots Advanced Minimal implementation without Dnd Context 1`] = `
           }
         >
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -787,10 +782,7 @@ exports[`Storyshots Advanced Minimal implementation without Dnd Context 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -811,7 +803,9 @@ exports[`Storyshots Advanced Minimal implementation without Dnd Context 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -865,10 +859,7 @@ exports[`Storyshots Advanced Minimal implementation without Dnd Context 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -950,7 +941,9 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -999,10 +992,7 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1023,7 +1013,9 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1072,10 +1064,7 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1096,7 +1085,9 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1158,10 +1149,7 @@ exports[`Storyshots Advanced Playing with generateNodeProps 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1244,7 +1232,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1311,10 +1301,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1335,7 +1322,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1389,10 +1378,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1413,7 +1399,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1467,10 +1455,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1491,7 +1476,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1558,10 +1545,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1582,7 +1566,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1636,10 +1622,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1660,7 +1643,9 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1714,10 +1699,7 @@ exports[`Storyshots Advanced Prevent some nodes from having children 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1805,7 +1787,9 @@ exports[`Storyshots Advanced Touch support (Experimental) 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1872,10 +1856,7 @@ exports[`Storyshots Advanced Touch support (Experimental) 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -1896,7 +1877,9 @@ exports[`Storyshots Advanced Touch support (Experimental) 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -1950,10 +1933,7 @@ exports[`Storyshots Advanced Touch support (Experimental) 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2039,7 +2019,9 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2098,10 +2080,7 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2122,7 +2101,9 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2168,10 +2149,7 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2252,7 +2230,9 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2298,10 +2278,7 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2322,7 +2299,9 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2368,10 +2347,7 @@ exports[`Storyshots Advanced Tree-to-tree dragging 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2527,7 +2503,9 @@ exports[`Storyshots Advanced onlyExpandSearchedNodes 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2586,10 +2564,7 @@ exports[`Storyshots Advanced onlyExpandSearchedNodes 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2672,7 +2647,9 @@ exports[`Storyshots Basics Add and remove nodes programmatically 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2718,10 +2695,7 @@ exports[`Storyshots Basics Add and remove nodes programmatically 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2761,7 +2735,9 @@ exports[`Storyshots Basics Add and remove nodes programmatically 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2807,10 +2783,7 @@ exports[`Storyshots Basics Add and remove nodes programmatically 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -2930,7 +2903,9 @@ exports[`Storyshots Basics Callbacks 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -2997,10 +2972,7 @@ exports[`Storyshots Basics Callbacks 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3021,7 +2993,9 @@ exports[`Storyshots Basics Callbacks 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -3075,10 +3049,7 @@ exports[`Storyshots Basics Callbacks 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3099,7 +3070,9 @@ exports[`Storyshots Basics Callbacks 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -3145,10 +3118,7 @@ exports[`Storyshots Basics Callbacks 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3230,7 +3200,9 @@ exports[`Storyshots Basics Minimal implementation 1`] = `
           }
         >
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -3297,10 +3269,7 @@ exports[`Storyshots Basics Minimal implementation 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -3321,7 +3290,9 @@ exports[`Storyshots Basics Minimal implementation 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -3375,10 +3346,7 @@ exports[`Storyshots Basics Minimal implementation 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -3460,7 +3428,9 @@ exports[`Storyshots Basics Modify nodes 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -3506,10 +3476,7 @@ exports[`Storyshots Basics Modify nodes 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3538,7 +3505,9 @@ exports[`Storyshots Basics Modify nodes 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -3605,10 +3574,7 @@ exports[`Storyshots Basics Modify nodes 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3637,7 +3603,9 @@ exports[`Storyshots Basics Modify nodes 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -3691,10 +3659,7 @@ exports[`Storyshots Basics Modify nodes 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -3784,7 +3749,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
           }
         >
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -3851,10 +3818,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -3880,7 +3844,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -3934,10 +3900,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -3958,7 +3921,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4025,10 +3990,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -4054,7 +4016,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4108,10 +4072,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -4132,7 +4093,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4178,10 +4141,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -4207,7 +4167,9 @@ exports[`Storyshots Basics Prevent drop 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4253,10 +4215,7 @@ exports[`Storyshots Basics Prevent drop 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
                         className="rst__rowLabel"
@@ -4343,7 +4302,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
           }
         >
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4410,10 +4371,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4434,7 +4392,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4488,10 +4448,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4512,7 +4469,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4566,10 +4525,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4590,7 +4546,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4644,10 +4602,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4668,7 +4623,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4722,10 +4679,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4746,7 +4700,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4800,10 +4756,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -4824,7 +4777,9 @@ exports[`Storyshots Basics Row direction support 1`] = `
             </div>
           </div>
           <div
+            canDrop={false}
             className="rst__node rst__rtl"
+            draggedNode={null}
             style={
               Object {
                 "height": 62,
@@ -4878,10 +4833,7 @@ exports[`Storyshots Basics Row direction support 1`] = `
                     }
                   >
                     <div
-                      className="rst__moveHandle"
-                    />
-                    <div
-                      className="rst__rowContents rst__rtl"
+                      className="rst__rowContents rst__rowContentsDragDisabled rst__rtl"
                     >
                       <div
                         className="rst__rowLabel rst__rtl"
@@ -5007,7 +4959,9 @@ exports[`Storyshots Basics Search 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -5066,10 +5020,7 @@ exports[`Storyshots Basics Search 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -5140,8 +5091,8 @@ exports[`Storyshots Basics Themes 1`] = `
           role="rowgroup"
           style={
             Object {
-              "height": 125,
-              "maxHeight": 125,
+              "height": 310,
+              "maxHeight": 310,
               "maxWidth": 200,
               "overflow": "hidden",
               "pointerEvents": "",
@@ -5151,10 +5102,12 @@ exports[`Storyshots Basics Themes 1`] = `
           }
         >
           <div
-            className="rstcustom__node"
+            canDrop={false}
+            className="rst__node"
+            draggedNode={null}
             style={
               Object {
-                "height": 25,
+                "height": 62,
                 "left": 0,
                 "position": "absolute",
                 "top": 0,
@@ -5163,43 +5116,54 @@ exports[`Storyshots Basics Themes 1`] = `
             }
           >
             <div
+              className="rst__lineBlock rst__lineHalfHorizontalRight rst__lineHalfVerticalBottom"
               style={
                 Object {
-                  "height": "100%",
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__nodeContent"
+              style={
+                Object {
+                  "left": 44,
                 }
               }
             >
-              <button
-                aria-label="Collapse"
-                className="rstcustom__collapseButton"
-                onClick={[Function]}
+              <div
                 style={
                   Object {
-                    "left": 7.500000000000001,
+                    "height": "100%",
                   }
                 }
-                type="button"
-              />
-              <div
-                className="rstcustom__rowWrapper"
               >
-                <div
-                  style={
-                    Object {
-                      "display": "flex",
-                    }
-                  }
-                >
-                  <div
-                    className="rstcustom__lineBlock"
+                <div>
+                  <button
+                    aria-label="Collapse"
+                    className="rst__collapseButton"
+                    onClick={[Function]}
                     style={
                       Object {
-                        "width": 25,
+                        "left": -22,
+                      }
+                    }
+                    type="button"
+                  />
+                  <div
+                    className="rst__lineChildren"
+                    style={
+                      Object {
+                        "width": 44,
                       }
                     }
                   />
+                </div>
+                <div
+                  className="rst__rowWrapper"
+                >
                   <div
-                    className="rstcustom__row"
+                    className="rst__row"
                     style={
                       Object {
                         "opacity": 1,
@@ -5207,20 +5171,19 @@ exports[`Storyshots Basics Themes 1`] = `
                     }
                   >
                     <div
-                      className="rstcustom__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
-                        className="rstcustom__rowToolbar"
-                      />
-                      <div
-                        className="rstcustom__rowLabel"
+                        className="rst__rowLabel"
                       >
-                        <span>
+                        <span
+                          className="rst__rowTitle"
+                        >
                           The file explorer theme
                         </span>
                       </div>
                       <div
-                        className="rstcustom__rowToolbar"
+                        className="rst__rowToolbar"
                       />
                     </div>
                   </div>
@@ -5229,63 +5192,76 @@ exports[`Storyshots Basics Themes 1`] = `
             </div>
           </div>
           <div
-            className="rstcustom__node"
+            canDrop={false}
+            className="rst__node"
+            draggedNode={null}
             style={
               Object {
-                "height": 25,
+                "height": 62,
                 "left": 0,
                 "position": "absolute",
-                "top": 25,
+                "top": 62,
                 "width": "100%",
               }
             }
           >
             <div
+              className="rst__lineBlock rst__lineFullVertical"
               style={
                 Object {
-                  "height": "100%",
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__lineBlock rst__lineHalfVerticalTop rst__lineHalfHorizontalRight"
+              style={
+                Object {
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__nodeContent"
+              style={
+                Object {
+                  "left": 88,
                 }
               }
             >
-              <button
-                aria-label="Collapse"
-                className="rstcustom__collapseButton"
-                onClick={[Function]}
+              <div
                 style={
                   Object {
-                    "left": 32.5,
+                    "height": "100%",
                   }
                 }
-                type="button"
-              />
-              <div
-                className="rstcustom__rowWrapper"
               >
-                <div
-                  style={
-                    Object {
-                      "display": "flex",
+                <div>
+                  <button
+                    aria-label="Collapse"
+                    className="rst__collapseButton"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "left": -22,
+                      }
                     }
-                  }
+                    type="button"
+                  />
+                  <div
+                    className="rst__lineChildren"
+                    style={
+                      Object {
+                        "width": 44,
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className="rst__rowWrapper"
                 >
                   <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__row"
+                    className="rst__row"
                     style={
                       Object {
                         "opacity": 1,
@@ -5293,20 +5269,19 @@ exports[`Storyshots Basics Themes 1`] = `
                     }
                   >
                     <div
-                      className="rstcustom__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
-                        className="rstcustom__rowToolbar"
-                      />
-                      <div
-                        className="rstcustom__rowLabel"
+                        className="rst__rowLabel"
                       >
-                        <span>
+                        <span
+                          className="rst__rowTitle"
+                        >
                           Imported from react-sortable-tree-theme-file-explorer
                         </span>
                       </div>
                       <div
-                        className="rstcustom__rowToolbar"
+                        className="rst__rowToolbar"
                       />
                     </div>
                   </div>
@@ -5315,60 +5290,63 @@ exports[`Storyshots Basics Themes 1`] = `
             </div>
           </div>
           <div
-            className="rstcustom__node"
+            canDrop={false}
+            className="rst__node"
+            draggedNode={null}
             style={
               Object {
-                "height": 25,
+                "height": 62,
                 "left": 0,
                 "position": "absolute",
-                "top": 50,
+                "top": 124,
                 "width": "100%",
               }
             }
           >
             <div
+              className="rst__lineBlock rst__lineFullVertical"
               style={
                 Object {
-                  "height": "100%",
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__lineBlock"
+              style={
+                Object {
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__lineBlock rst__lineHalfVerticalTop rst__lineHalfHorizontalRight"
+              style={
+                Object {
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__nodeContent"
+              style={
+                Object {
+                  "left": 132,
                 }
               }
             >
               <div
-                className="rstcustom__rowWrapper"
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
               >
                 <div
-                  style={
-                    Object {
-                      "display": "flex",
-                    }
-                  }
+                  className="rst__rowWrapper"
                 >
                   <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__row"
+                    className="rst__row"
                     style={
                       Object {
                         "opacity": 1,
@@ -5376,15 +5354,14 @@ exports[`Storyshots Basics Themes 1`] = `
                     }
                   >
                     <div
-                      className="rstcustom__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
-                        className="rstcustom__rowToolbar"
-                      />
-                      <div
-                        className="rstcustom__rowLabel"
+                        className="rst__rowLabel"
                       >
-                        <span>
+                        <span
+                          className="rst__rowTitle"
+                        >
                           <div>
                             Find it on
                              
@@ -5397,7 +5374,7 @@ exports[`Storyshots Basics Themes 1`] = `
                         </span>
                       </div>
                       <div
-                        className="rstcustom__rowToolbar"
+                        className="rst__rowToolbar"
                       />
                     </div>
                   </div>
@@ -5406,44 +5383,47 @@ exports[`Storyshots Basics Themes 1`] = `
             </div>
           </div>
           <div
-            className="rstcustom__node"
+            canDrop={false}
+            className="rst__node"
+            draggedNode={null}
             style={
               Object {
-                "height": 25,
+                "height": 62,
                 "left": 0,
                 "position": "absolute",
-                "top": 75,
+                "top": 186,
                 "width": "100%",
               }
             }
           >
             <div
+              className="rst__lineBlock rst__lineHalfHorizontalRight rst__lineFullVertical"
               style={
                 Object {
-                  "height": "100%",
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__nodeContent"
+              style={
+                Object {
+                  "left": 44,
                 }
               }
             >
               <div
-                className="rstcustom__rowWrapper"
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
               >
                 <div
-                  style={
-                    Object {
-                      "display": "flex",
-                    }
-                  }
+                  className="rst__rowWrapper"
                 >
                   <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__row"
+                    className="rst__row"
                     style={
                       Object {
                         "opacity": 1,
@@ -5451,20 +5431,19 @@ exports[`Storyshots Basics Themes 1`] = `
                     }
                   >
                     <div
-                      className="rstcustom__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
-                        className="rstcustom__rowToolbar"
-                      />
-                      <div
-                        className="rstcustom__rowLabel"
+                        className="rst__rowLabel"
                       >
-                        <span>
+                        <span
+                          className="rst__rowTitle"
+                        >
                           More compact than the default
                         </span>
                       </div>
                       <div
-                        className="rstcustom__rowToolbar"
+                        className="rst__rowToolbar"
                       />
                     </div>
                   </div>
@@ -5473,44 +5452,47 @@ exports[`Storyshots Basics Themes 1`] = `
             </div>
           </div>
           <div
-            className="rstcustom__node"
+            canDrop={false}
+            className="rst__node"
+            draggedNode={null}
             style={
               Object {
-                "height": 25,
+                "height": 62,
                 "left": 0,
                 "position": "absolute",
-                "top": 100,
+                "top": 248,
                 "width": "100%",
               }
             }
           >
             <div
+              className="rst__lineBlock rst__lineHalfVerticalTop rst__lineHalfHorizontalRight"
               style={
                 Object {
-                  "height": "100%",
+                  "width": 44,
+                }
+              }
+            />
+            <div
+              className="rst__nodeContent"
+              style={
+                Object {
+                  "left": 44,
                 }
               }
             >
               <div
-                className="rstcustom__rowWrapper"
+                style={
+                  Object {
+                    "height": "100%",
+                  }
+                }
               >
                 <div
-                  style={
-                    Object {
-                      "display": "flex",
-                    }
-                  }
+                  className="rst__rowWrapper"
                 >
                   <div
-                    className="rstcustom__lineBlock"
-                    style={
-                      Object {
-                        "width": 25,
-                      }
-                    }
-                  />
-                  <div
-                    className="rstcustom__row"
+                    className="rst__row"
                     style={
                       Object {
                         "opacity": 1,
@@ -5518,15 +5500,14 @@ exports[`Storyshots Basics Themes 1`] = `
                     }
                   >
                     <div
-                      className="rstcustom__rowContents"
+                      className="rst__rowContents rst__rowContentsDragDisabled"
                     >
                       <div
-                        className="rstcustom__rowToolbar"
-                      />
-                      <div
-                        className="rstcustom__rowLabel"
+                        className="rst__rowLabel"
                       >
-                        <span>
+                        <span
+                          className="rst__rowTitle"
+                        >
                           <div>
                             Simply set it to the 
                             <code>
@@ -5537,7 +5518,7 @@ exports[`Storyshots Basics Themes 1`] = `
                         </span>
                       </div>
                       <div
-                        className="rstcustom__rowToolbar"
+                        className="rst__rowToolbar"
                       />
                     </div>
                   </div>
@@ -5608,7 +5589,9 @@ exports[`Storyshots Basics treeData import/export 1`] = `
             }
           >
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -5654,10 +5637,7 @@ exports[`Storyshots Basics treeData import/export 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
@@ -5678,7 +5658,9 @@ exports[`Storyshots Basics treeData import/export 1`] = `
               </div>
             </div>
             <div
+              canDrop={false}
               className="rst__node"
+              draggedNode={null}
               style={
                 Object {
                   "height": 62,
@@ -5737,10 +5719,7 @@ exports[`Storyshots Basics treeData import/export 1`] = `
                       }
                     >
                       <div
-                        className="rst__moveHandle"
-                      />
-                      <div
-                        className="rst__rowContents"
+                        className="rst__rowContents rst__rowContentsDragDisabled"
                       >
                         <div
                           className="rst__rowLabel"
