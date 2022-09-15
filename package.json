@@ -1,6 +1,6 @@
 {
-  "name": "react-sortable-tree",
-  "version": "3.0.0",
+  "name": "@antoniel/react-sortable-tree",
+  "version": "3.0.3",
   "description": "Drag-and-drop sortable component for nested data and hierarchies",
   "scripts": {
     "prebuild": "yarn run lint && yarn run clean",
@@ -10,7 +10,6 @@
     "clean:storybook": "rimraf build",
     "lint": "eslint src",
     "prettier": "prettier --write \"{src,example/src,stories}/**/*.{js,css,md}\"",
-    "prepublishOnly": "yarn run test && yarn run build",
     "release": "standard-version",
     "test": "jest",
     "test:watch": "jest --watchAll",
@@ -21,14 +20,17 @@
   "module": "dist/index.esm.js",
   "files": [
     "dist",
+    "index.d.ts",
     "style.css"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/frontend-collective/react-sortable-tree"
+    "url": "git+https://github.com/frontend-collective/react-sortable-tree.git"
   },
   "homepage": "https://frontend-collective.github.io/react-sortable-tree/",
-  "bugs": "https://github.com/frontend-collective/react-sortable-tree/issues",
+  "bugs": {
+    "url": "https://github.com/frontend-collective/react-sortable-tree/issues"
+  },
   "authors": [
     "Chris Fritz"
   ],
@@ -71,7 +73,9 @@
     "react-dnd": "^11.1.3",
     "react-dnd-html5-backend": "^11.1.3",
     "react-lifecycles-compat": "^3.0.4",
-    "react-virtualized": "^9.21.2"
+    "react-virtualized": "git+https://git@github.com/remorses/react-virtualized-fixed-import.git#9.22.3",
+    "rollup-plugin-typescript2": "^0.31.0",
+    "typescript": "^4.8.3"
   },
   "peerDependencies": {
     "react": "^16.3.0",
@@ -128,5 +132,6 @@
   "keywords": [
     "react",
     "react-component"
-  ]
+  ],
+  "author": "antoniel"
 }
