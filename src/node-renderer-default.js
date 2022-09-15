@@ -9,8 +9,6 @@ class NodeRendererDefault extends Component {
     const {
       scaffoldBlockPxWidth,
       toggleChildrenVisibility,
-      connectDragPreview,
-      connectDragSource,
       isDragging,
       canDrop,
       canDrag,
@@ -59,9 +57,7 @@ class NodeRendererDefault extends Component {
         );
       } else {
         // Show the handle used to initiate a drag-and-drop
-        handle = connectDragSource(<div className="rst__moveHandle" />, {
-          dropEffect: 'copy',
-        });
+        handle = <div className="rst__moveHandle" />;
       }
     }
 
@@ -107,73 +103,71 @@ class NodeRendererDefault extends Component {
 
         <div className={classnames('rst__rowWrapper', rowDirectionClass)}>
           {/* Set the row preview to be used during drag and drop */}
-          {connectDragPreview(
+          <div
+            className={classnames(
+              'rst__row',
+              isLandingPadActive && 'rst__rowLandingPad',
+              isLandingPadActive && !canDrop && 'rst__rowCancelPad',
+              isSearchMatch && 'rst__rowSearchMatch',
+              isSearchFocus && 'rst__rowSearchFocus',
+              rowDirectionClass,
+              className
+            )}
+            style={{
+              opacity: isDraggedDescendant ? 0.5 : 1,
+              ...style,
+            }}
+          >
+            {handle}
+
             <div
               className={classnames(
-                'rst__row',
-                isLandingPadActive && 'rst__rowLandingPad',
-                isLandingPadActive && !canDrop && 'rst__rowCancelPad',
-                isSearchMatch && 'rst__rowSearchMatch',
-                isSearchFocus && 'rst__rowSearchFocus',
-                rowDirectionClass,
-                className
+                'rst__rowContents',
+                !canDrag && 'rst__rowContentsDragDisabled',
+                rowDirectionClass
               )}
-              style={{
-                opacity: isDraggedDescendant ? 0.5 : 1,
-                ...style,
-              }}
             >
-              {handle}
+              <div className={classnames('rst__rowLabel', rowDirectionClass)}>
+                <span
+                  className={classnames(
+                    'rst__rowTitle',
+                    node.subtitle && 'rst__rowTitleWithSubtitle'
+                  )}
+                >
+                  {typeof nodeTitle === 'function'
+                    ? nodeTitle({
+                        node,
+                        path,
+                        treeIndex,
+                      })
+                    : nodeTitle}
+                </span>
 
-              <div
-                className={classnames(
-                  'rst__rowContents',
-                  !canDrag && 'rst__rowContentsDragDisabled',
-                  rowDirectionClass
-                )}
-              >
-                <div className={classnames('rst__rowLabel', rowDirectionClass)}>
-                  <span
-                    className={classnames(
-                      'rst__rowTitle',
-                      node.subtitle && 'rst__rowTitleWithSubtitle'
-                    )}
-                  >
-                    {typeof nodeTitle === 'function'
-                      ? nodeTitle({
+                {nodeSubtitle && (
+                  <span className="rst__rowSubtitle">
+                    {typeof nodeSubtitle === 'function'
+                      ? nodeSubtitle({
                           node,
                           path,
                           treeIndex,
                         })
-                      : nodeTitle}
+                      : nodeSubtitle}
                   </span>
+                )}
+              </div>
 
-                  {nodeSubtitle && (
-                    <span className="rst__rowSubtitle">
-                      {typeof nodeSubtitle === 'function'
-                        ? nodeSubtitle({
-                            node,
-                            path,
-                            treeIndex,
-                          })
-                        : nodeSubtitle}
-                    </span>
-                  )}
-                </div>
-
-                <div className="rst__rowToolbar">
-                  {buttons.map((btn, index) => (
-                    <div
-                      key={index} // eslint-disable-line react/no-array-index-key
-                      className="rst__toolbarButton"
-                    >
-                      {btn}
-                    </div>
-                  ))}
-                </div>
+              <div className="rst__rowToolbar">
+                {buttons.map((btn, index) => (
+                  <div
+                    key={index} // eslint-disable-line react/no-array-index-key
+                    className="rst__toolbarButton"
+                  >
+                    {btn}
+                  </div>
+                ))}
               </div>
             </div>
-          )}
+          </div>
         </div>
       </div>
     );
@@ -216,8 +210,6 @@ NodeRendererDefault.propTypes = {
 
   // Drag and drop API functions
   // Drag source
-  connectDragPreview: PropTypes.func.isRequired,
-  connectDragSource: PropTypes.func.isRequired,
   parentNode: PropTypes.shape({}), // Needed for dndManager
   isDragging: PropTypes.bool.isRequired,
   didDrop: PropTypes.bool.isRequired,

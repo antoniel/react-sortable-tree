@@ -21,7 +21,6 @@ import {
   defaultGetNodeKey,
   defaultSearchMethod,
 } from './utils/default-handlers';
-import DndManager from './utils/dnd-manager';
 import { slideRows } from './utils/generic-utils';
 import {
   memoizedGetDescendantCount,
@@ -31,8 +30,6 @@ import {
 import {
   changeNodeAtPath,
   find,
-  insertNode,
-  removeNode,
   toggleExpandedForAll,
   walk,
 } from './utils/tree-data-utils';
@@ -85,17 +82,13 @@ class ReactSortableTree extends Component {
       slideRegionSize,
     } = mergeTheme(props);
 
-    this.dndManager = new DndManager(this);
-
     // Wrapping classes for use with react-dnd
     this.treeId = `rst__${treeIdCounter}`;
     treeIdCounter += 1;
     this.dndType = dndType || this.treeId;
-    this.nodeContentRenderer = this.dndManager.wrapSource(nodeContentRenderer);
-    this.treePlaceholderRenderer = this.dndManager.wrapPlaceholder(
-      TreePlaceholder
-    );
-    this.treeNodeRenderer = this.dndManager.wrapTarget(treeNodeRenderer);
+    this.nodeContentRenderer = nodeContentRenderer;
+    this.treePlaceholderRenderer = TreePlaceholder;
+    this.treeNodeRenderer = treeNodeRenderer;
 
     // Prepare scroll-on-drag options for this list
     if (isVirtualized) {
@@ -125,12 +118,6 @@ class ReactSortableTree extends Component {
     };
 
     this.toggleChildrenVisibility = this.toggleChildrenVisibility.bind(this);
-    this.moveNode = this.moveNode.bind(this);
-    this.startDrag = this.startDrag.bind(this);
-    this.dragHover = this.dragHover.bind(this);
-    this.endDrag = this.endDrag.bind(this);
-    this.drop = this.drop.bind(this);
-    this.handleDndMonitorChange = this.handleDndMonitorChange.bind(this);
   }
 
   componentDidMount() {
@@ -143,13 +130,6 @@ class ReactSortableTree extends Component {
       false
     );
     this.setState(stateUpdate);
-
-    // Hook into react-dnd state changes to detect when the drag ends
-    // TODO: This is very brittle, so it needs to be replaced if react-dnd
-    // offers a more official way to detect when a drag ends
-    this.clearMonitorSubscription = this.props.dragDropManager
-      .getMonitor()
-      .subscribeToStateChange(this.handleDndMonitorChange);
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -194,26 +174,9 @@ class ReactSortableTree extends Component {
 
     instanceProps.searchQuery = nextProps.searchQuery;
     instanceProps.searchFocusOffset = nextProps.searchFocusOffset;
-    newState.instanceProps = {...instanceProps, ...newState.instanceProps };
- 
+    newState.instanceProps = { ...instanceProps, ...newState.instanceProps };
+
     return newState;
-  }
-
-  // listen to dragging
-  componentDidUpdate(prevProps, prevState) {
-    // if it is not the same then call the onDragStateChanged
-    if (this.state.dragging !== prevState.dragging) {
-      if (this.props.onDragStateChanged) {
-        this.props.onDragStateChanged({
-          isDragging: this.state.dragging,
-          draggedNode: this.state.draggedNode,
-        });
-      }
-    }
-  }
-
-  componentWillUnmount() {
-    this.clearMonitorSubscription();
   }
 
   getRows(treeData) {
@@ -222,16 +185,6 @@ class ReactSortableTree extends Component {
       getNodeKey: this.props.getNodeKey,
       treeData,
     });
-  }
-
-  handleDndMonitorChange() {
-    const monitor = this.props.dragDropManager.getMonitor();
-    // If the drag ends and the tree is still in a mid-drag state,
-    // it means that the drag was canceled or the dragSource dropped
-    // elsewhere, and we should reset the state of this tree
-    if (!monitor.isDragging() && this.state.draggingTreeData) {
-      setTimeout(() => {this.endDrag()});
-    }
   }
 
   toggleChildrenVisibility({ node: targetNode, path }) {
@@ -251,42 +204,6 @@ class ReactSortableTree extends Component {
       node: targetNode,
       expanded: !targetNode.expanded,
       path,
-    });
-  }
-
-  moveNode({
-    node,
-    path: prevPath,
-    treeIndex: prevTreeIndex,
-    depth,
-    minimumTreeIndex,
-  }) {
-    const {
-      treeData,
-      treeIndex,
-      path,
-      parentNode: nextParentNode,
-    } = insertNode({
-      treeData: this.state.draggingTreeData,
-      newNode: node,
-      depth,
-      minimumTreeIndex,
-      expandParent: true,
-      getNodeKey: this.props.getNodeKey,
-    });
-
-    this.props.onChange(treeData);
-
-    this.props.onMoveNode({
-      treeData,
-      node,
-      treeIndex,
-      path,
-      nextPath: path,
-      nextTreeIndex: treeIndex,
-      prevPath,
-      prevTreeIndex,
-      nextParentNode,
     });
   }
 
@@ -356,135 +273,6 @@ class ReactSortableTree extends Component {
     return newState;
   }
 
-  startDrag({ path }) {
-    this.setState(prevState => {
-      const {
-        treeData: draggingTreeData,
-        node: draggedNode,
-        treeIndex: draggedMinimumTreeIndex,
-      } = removeNode({
-        treeData: prevState.instanceProps.treeData,
-        path,
-        getNodeKey: this.props.getNodeKey,
-      });
-
-      return {
-        draggingTreeData,
-        draggedNode,
-        draggedDepth: path.length - 1,
-        draggedMinimumTreeIndex,
-        dragging: true,
-      };
-    });
-  }
-
-  dragHover({
-    node: draggedNode,
-    depth: draggedDepth,
-    minimumTreeIndex: draggedMinimumTreeIndex,
-  }) {
-    // Ignore this hover if it is at the same position as the last hover
-    if (
-      this.state.draggedDepth === draggedDepth &&
-      this.state.draggedMinimumTreeIndex === draggedMinimumTreeIndex
-    ) {
-      return;
-    }
-
-    this.setState(({ draggingTreeData, instanceProps }) => {
-      // Fall back to the tree data if something is being dragged in from
-      //  an external element
-      const newDraggingTreeData = draggingTreeData || instanceProps.treeData;
-
-      const addedResult = memoizedInsertNode({
-        treeData: newDraggingTreeData,
-        newNode: draggedNode,
-        depth: draggedDepth,
-        minimumTreeIndex: draggedMinimumTreeIndex,
-        expandParent: true,
-        getNodeKey: this.props.getNodeKey,
-      });
-
-      const rows = this.getRows(addedResult.treeData);
-      const expandedParentPath = rows[addedResult.treeIndex].path;
-
-      return {
-        draggedNode,
-        draggedDepth,
-        draggedMinimumTreeIndex,
-        draggingTreeData: changeNodeAtPath({
-          treeData: newDraggingTreeData,
-          path: expandedParentPath.slice(0, -1),
-          newNode: ({ node }) => ({ ...node, expanded: true }),
-          getNodeKey: this.props.getNodeKey,
-        }),
-        // reset the scroll focus so it doesn't jump back
-        // to a search result while dragging
-        searchFocusTreeIndex: null,
-        dragging: true,
-      };
-    });
-  }
-
-  endDrag(dropResult) {
-    const { instanceProps } = this.state;
-
-    const resetTree = () =>
-      this.setState({
-        draggingTreeData: null,
-        draggedNode: null,
-        draggedMinimumTreeIndex: null,
-        draggedDepth: null,
-        dragging: false,
-      });
-
-    // Drop was cancelled
-    if (!dropResult) {
-      resetTree();
-    } else if (dropResult.treeId !== this.treeId) {
-      // The node was dropped in an external drop target or tree
-      const { node, path, treeIndex } = dropResult;
-      let shouldCopy = this.props.shouldCopyOnOutsideDrop;
-      if (typeof shouldCopy === 'function') {
-        shouldCopy = shouldCopy({
-          node,
-          prevTreeIndex: treeIndex,
-          prevPath: path,
-        });
-      }
-
-      let treeData = this.state.draggingTreeData || instanceProps.treeData;
-
-      // If copying is enabled, a drop outside leaves behind a copy in the
-      //  source tree
-      if (shouldCopy) {
-        treeData = changeNodeAtPath({
-          treeData: instanceProps.treeData, // use treeData unaltered by the drag operation
-          path,
-          newNode: ({ node: copyNode }) => ({ ...copyNode }), // create a shallow copy of the node
-          getNodeKey: this.props.getNodeKey,
-        });
-      }
-
-      this.props.onChange(treeData);
-
-      this.props.onMoveNode({
-        treeData,
-        node,
-        treeIndex: null,
-        path: null,
-        nextPath: null,
-        nextTreeIndex: null,
-        prevPath: path,
-        prevTreeIndex: treeIndex,
-      });
-    }
-  }
-
-  drop(dropResult) {
-    this.moveNode(dropResult);
-  }
-
   canNodeHaveChildren(node) {
     const { canNodeHaveChildren } = this.props;
     if (canNodeHaveChildren) {
@@ -547,7 +335,6 @@ class ReactSortableTree extends Component {
     const { node, parentNode, path, lowerSiblingCounts, treeIndex } = row;
 
     const {
-      canDrag,
       generateNodeProps,
       scaffoldBlockPxWidth,
       searchFocusOffset,
@@ -571,8 +358,6 @@ class ReactSortableTree extends Component {
     const nodeProps = !generateNodeProps
       ? {}
       : generateNodeProps(callbackParams);
-    const rowCanDrag =
-      typeof canDrag !== 'function' ? canDrag : canDrag(callbackParams);
 
     const sharedProps = {
       treeIndex,
@@ -599,7 +384,6 @@ class ReactSortableTree extends Component {
           parentNode={parentNode}
           isSearchMatch={isSearchMatch}
           isSearchFocus={isSearchFocus}
-          canDrag={rowCanDrag}
           toggleChildrenVisibility={this.toggleChildrenVisibility}
           {...sharedProps}
           {...nodeProps}
@@ -677,7 +461,7 @@ class ReactSortableTree extends Component {
       const Placeholder = this.treePlaceholderRenderer;
       const PlaceholderContent = placeholderRenderer;
       list = (
-        <Placeholder treeId={this.treeId} drop={this.drop}>
+        <Placeholder treeId={this.treeId}>
           <PlaceholderContent />
         </Placeholder>
       );
@@ -771,16 +555,13 @@ class ReactSortableTree extends Component {
 }
 
 ReactSortableTree.propTypes = {
-  dragDropManager: PropTypes.shape({
-    getMonitor: PropTypes.func,
-  }).isRequired,
-
   // Tree data in the following format:
   // [{title: 'main', subtitle: 'sub'}, { title: 'value2', expanded: true, children: [{ title: 'value3') }] }]
   // `title` is the primary label for the node
   // `subtitle` is a secondary label for the node
   // `expanded` shows children of the node if true, or hides them if false. Defaults to false.
   // `children` is an array of child nodes belonging to the node.
+  // eslint-disable-next-line react/forbid-prop-types
   treeData: PropTypes.arrayOf(PropTypes.object).isRequired,
 
   // Style applied to the container wrapping the tree (style defaults to {height: '100%'})
@@ -873,12 +654,6 @@ ReactSortableTree.propTypes = {
   // Called after node move operation.
   onMoveNode: PropTypes.func,
 
-  // Determine whether a node can be dragged. Set to false to disable dragging on all nodes.
-  canDrag: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-
-  // Determine whether a node can be dropped based on its path and parents'.
-  canDrop: PropTypes.func,
-
   // Determine whether a node can have children
   canNodeHaveChildren: PropTypes.func,
 
@@ -894,9 +669,6 @@ ReactSortableTree.propTypes = {
 
   dndType: PropTypes.string,
 
-  // Called to track between dropped and dragging
-  onDragStateChanged: PropTypes.func,
-
   // Specify that nodes that do not match search will be collapsed
   onlyExpandSearchedNodes: PropTypes.bool,
 
@@ -905,8 +677,6 @@ ReactSortableTree.propTypes = {
 };
 
 ReactSortableTree.defaultProps = {
-  canDrag: true,
-  canDrop: null,
   canNodeHaveChildren: () => true,
   className: '',
   dndType: null,
@@ -931,7 +701,6 @@ ReactSortableTree.defaultProps = {
   slideRegionSize: null,
   style: {},
   theme: {},
-  onDragStateChanged: () => {},
   onlyExpandSearchedNodes: false,
   rowDirection: 'ltr',
 };

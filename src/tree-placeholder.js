@@ -3,14 +3,8 @@ import PropTypes from 'prop-types';
 
 class TreePlaceholder extends Component {
   render() {
-    const {
-      children,
-      connectDropTarget,
-      treeId,
-      drop,
-      ...otherProps
-    } = this.props;
-    return connectDropTarget(
+    const { children, treeId, ...otherProps } = this.props;
+    return (
       <div>
         {Children.map(children, child =>
           cloneElement(child, {
@@ -31,12 +25,10 @@ TreePlaceholder.propTypes = {
   children: PropTypes.node.isRequired,
 
   // Drop target
-  connectDropTarget: PropTypes.func.isRequired,
   isOver: PropTypes.bool.isRequired,
   canDrop: PropTypes.bool,
   draggedNode: PropTypes.shape({}),
   treeId: PropTypes.string.isRequired,
-  drop: PropTypes.func.isRequired,
 };
 
 export default TreePlaceholder;

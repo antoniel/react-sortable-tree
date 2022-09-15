@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable react/no-multi-comp */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -20,7 +21,6 @@ const externalNodeSpec = {
   beginDrag: componentProps => ({ node: { ...componentProps.node } }),
 };
 const externalNodeCollect = (connect /* , monitor */) => ({
-  connectDragSource: connect.dragSource(),
   // Add props via react-dnd APIs to enable more visual
   // customization of your component
   // isDragging: monitor.isDragging(),
@@ -28,9 +28,9 @@ const externalNodeCollect = (connect /* , monitor */) => ({
 });
 class externalNodeBaseComponent extends Component {
   render() {
-    const { connectDragSource, node } = this.props;
+    const { node } = this.props;
 
-    return connectDragSource(
+    return (
       <div
         style={{
           display: 'inline-block',
@@ -40,14 +40,12 @@ class externalNodeBaseComponent extends Component {
         }}
       >
         {node.title}
-      </div>,
-      { dropEffect: 'copy' }
+      </div>
     );
   }
 }
 externalNodeBaseComponent.propTypes = {
   node: PropTypes.shape({ title: PropTypes.string }).isRequired,
-  connectDragSource: PropTypes.func.isRequired,
 };
 const YourExternalNodeComponent = DragSource(
   externalNodeType,

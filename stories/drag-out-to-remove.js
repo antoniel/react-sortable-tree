@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 /* eslint-disable react/no-multi-comp */
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -20,7 +21,6 @@ const trashAreaSpec = {
   drop: (props, monitor) => ({ ...monitor.getItem(), treeId: 'trash' }),
 };
 const trashAreaCollect = (connect, monitor) => ({
-  connectDropTarget: connect.dropTarget(),
   isOver: monitor.isOver({ shallow: true }),
 });
 
@@ -28,9 +28,9 @@ const trashAreaCollect = (connect, monitor) => ({
 // nodes dragged out
 class trashAreaBaseComponent extends Component {
   render() {
-    const { connectDropTarget, children, isOver } = this.props;
+    const { children, isOver } = this.props;
 
-    return connectDropTarget(
+    return (
       <div
         style={{
           height: '100vh',
@@ -44,7 +44,6 @@ class trashAreaBaseComponent extends Component {
   }
 }
 trashAreaBaseComponent.propTypes = {
-  connectDropTarget: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   isOver: PropTypes.bool.isRequired,
 };
